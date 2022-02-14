@@ -1,10 +1,7 @@
-from distutils.log import error
-from operator import truediv
-import random
-from wordlesolver import getWord
+from wordleSolver import getWord
 from wordList import words
-from wordlesolver import useWordleAnswer
-from wordlesolver import lettersToNotUse, yellowLetters, greenLetters
+from wordleSolver import useWordleAnswer
+from wordleSolver import lettersToNotUse, yellowLetters, greenLetters
 
 
 def round(wordToFind, printRegex):
@@ -14,7 +11,7 @@ def round(wordToFind, printRegex):
     if(printRegex):
         print("word: " + word)
         print("wordleAnswer: " + wordleAnswer)
-    if(wordleAnswer=="rrrrr"):
+    if(wordleAnswer == "rrrrr"):
         return True
     won = useWordleAnswer(wordleAnswer, word)
     if(won):
