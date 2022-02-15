@@ -1,6 +1,7 @@
 from inspect import getblock
 import re
-from wordList import words
+from wordList import wordList
+from hebWordList import wordList as hebWordList
 
 
 def askForInput():
@@ -50,7 +51,7 @@ def round():
     won = useWordleAnswer(answer, word)
     if(won):
         return True
-    print("next word to use is: " + getWord())
+    print("next word to use is: " + getWord(False))
     return False
 
 
@@ -154,6 +155,14 @@ def getLetter(dictionary, index):
 
 
 def main():
+    print("Welcome to the wordle solver!")
+    print("enter language: heb/eng")
+    language = input()
+    global words
+    if(language == "heb"):
+        words = hebWordList
+    else:
+        words = wordList
     while(not round()):
         pass
     print("You won!")
